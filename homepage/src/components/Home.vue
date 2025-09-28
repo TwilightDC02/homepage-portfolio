@@ -65,7 +65,7 @@
       <!-- Current Project Link -->
       <div class="pt-8">
         <a 
-          href="http://feedme.justinbondc.com" 
+          href="https://feedme.justinbondc.com" 
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/50"
