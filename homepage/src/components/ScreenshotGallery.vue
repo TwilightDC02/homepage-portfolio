@@ -1,12 +1,12 @@
 <template>
-  <div class="overflow-x-auto -mx-1 px-1">
+  <div class="w-full min-w-0 overflow-x-auto pb-1">
     <div class="flex gap-3">
       <button
         v-for="(src, i) in media"
         :key="i"
         @click.prevent="openLightbox(src)"
         class="flex-shrink-0 rounded-lg overflow-hidden border border-white/10 hover:border-white/30 transition-all cursor-zoom-in group relative"
-        :class="media.length === 1 ? 'w-full max-w-2xl' : 'w-60 md:w-72'"
+        :class="media.length === 1 ? 'w-full' : 'w-44 md:w-64'"
       >
         <!-- Video -->
         <video
@@ -16,14 +16,14 @@
           muted
           loop
           playsinline
-          class="w-full h-40 object-cover object-top pointer-events-none"
+          class="w-full h-36 md:h-40 object-cover object-top pointer-events-none"
         />
         <!-- Image -->
         <img
           v-else
           :src="src"
           :alt="`Screenshot ${i + 1}`"
-          class="w-full h-40 object-cover object-top"
+          class="w-full h-36 md:h-40 object-cover object-top"
           loading="lazy"
         />
         <!-- Play icon overlay for videos -->

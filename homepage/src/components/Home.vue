@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-slate-950 text-white font-['Inter',system-ui,sans-serif]">
+  <div class="min-h-screen bg-slate-950 text-white font-['Inter',system-ui,sans-serif] overflow-x-hidden">
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
@@ -27,7 +27,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-36 pb-24 px-6">
+    <section class="pt-28 pb-16 md:pt-36 md:pb-24 px-6">
       <div class="max-w-4xl mx-auto">
         <div class="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full mb-8">
           <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
@@ -37,15 +37,15 @@
           Justin Bon<br class="hidden md:block" />
           <span class="text-purple-400">Dela Cruz</span>
         </h1>
-        <p class="text-xl md:text-2xl text-gray-400 font-light max-w-2xl mb-10 leading-relaxed">
+        <p class="text-lg md:text-2xl text-gray-400 font-light max-w-2xl mb-10 leading-relaxed">
           Full-stack developer and AI engineer building intelligent web applications.
           I turn ideas into shipped products.
         </p>
-        <div class="flex flex-wrap items-center gap-4">
-          <a href="#projects" class="px-8 py-3.5 bg-purple-600 hover:bg-purple-700 rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-purple-600/25">
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#projects" class="px-8 py-3.5 bg-purple-600 hover:bg-purple-700 rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-purple-600/25 text-center">
             View My Work
           </a>
-          <a href="#contact" class="px-8 py-3.5 border border-white/15 hover:border-white/30 rounded-lg font-medium transition-all">
+          <a href="#contact" class="px-8 py-3.5 border border-white/15 hover:border-white/30 rounded-lg font-medium transition-all text-center">
             Get In Touch
           </a>
         </div>
@@ -53,32 +53,31 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-24 px-6">
+    <section id="projects" class="py-16 md:py-24 px-6">
       <div class="max-w-6xl mx-auto">
         <p class="text-purple-400 font-medium text-sm tracking-wide uppercase mb-3">Portfolio</p>
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-        <p class="text-gray-400 mb-14 max-w-xl">Products I've built from the ground up — from AI-powered platforms to full-stack web applications.</p>
+        <p class="text-gray-400 mb-10 md:mb-14 max-w-xl">Products I've built from the ground up — from AI-powered platforms to full-stack web applications.</p>
 
         <!-- Talux Notes -->
         <div class="mb-6">
           <a href="https://talux.app" target="_blank" rel="noopener noreferrer"
-             class="group block p-8 md:p-10 bg-gradient-to-br from-purple-900/30 via-slate-800/40 to-slate-900/40 border border-white/10 rounded-2xl hover:border-purple-500/40 transition-all duration-300">
-            <div class="flex flex-wrap items-center gap-3 mb-5">
-              <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center font-bold text-xl">T</div>
-              <div>
-                <h3 class="text-2xl font-bold">Talux Notes</h3>
+             class="group block p-6 md:p-10 bg-gradient-to-br from-purple-900/30 via-slate-800/40 to-slate-900/40 border border-white/10 rounded-2xl hover:border-purple-500/40 transition-all duration-300">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-12 h-12 flex-shrink-0 bg-purple-600 rounded-xl flex items-center justify-center font-bold text-xl">T</div>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-xl md:text-2xl font-bold">Talux Notes</h3>
                 <p class="text-sm text-gray-500">AI-Powered Knowledge Platform</p>
               </div>
-              <span class="ml-auto flex items-center gap-2 text-sm text-purple-400">
-                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-                Live at talux.app
-                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </span>
             </div>
-            <p class="text-gray-400 leading-relaxed mb-6 max-w-3xl">
+            <div class="flex items-center gap-2 text-sm text-purple-400 mb-5 pl-1">
+              <span class="w-2 h-2 bg-green-400 rounded-full flex-shrink-0"></span>
+              Live at talux.app
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </div>
+            <p class="text-gray-400 leading-relaxed mb-6 max-w-3xl text-sm md:text-base">
               An AI-powered knowledge management platform with smart document import (PDF/DOCX), semantic search, and automated entry connection discovery. Features RAG-based conversational AI using Gemini 2.5 Flash, vector similarity pipelines with ChromaDB, multi-tenant auth with JWT, and voice recognition navigation.
             </p>
-            <!-- Screenshots -->
             <ScreenshotGallery v-if="screenshots.talux.length" :media="screenshots.talux" class="mb-6" />
             <div class="flex flex-wrap gap-2">
               <span class="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300">Python</span>
@@ -94,16 +93,16 @@
 
         <!-- FeedMe -->
         <div class="mb-6">
-          <div class="group block p-8 md:p-10 bg-gradient-to-br from-amber-900/20 via-slate-800/40 to-slate-900/40 border border-white/10 rounded-2xl">
-            <div class="flex flex-wrap items-center gap-3 mb-5">
-              <div class="w-12 h-12 bg-amber-600 rounded-xl flex items-center justify-center font-bold text-xl">F</div>
-              <div>
-                <h3 class="text-2xl font-bold">FeedMe</h3>
+          <div class="p-6 md:p-10 bg-gradient-to-br from-amber-900/20 via-slate-800/40 to-slate-900/40 border border-white/10 rounded-2xl">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-12 h-12 flex-shrink-0 bg-amber-600 rounded-xl flex items-center justify-center font-bold text-xl">F</div>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-xl md:text-2xl font-bold">FeedMe</h3>
                 <p class="text-sm text-gray-500">Credit Card Food Promo Aggregator</p>
               </div>
-              <span class="ml-auto text-sm text-gray-500">Currently offline</span>
             </div>
-            <p class="text-gray-400 leading-relaxed mb-6 max-w-3xl">
+            <p class="text-sm text-gray-500 mb-5 pl-1">Currently offline</p>
+            <p class="text-gray-400 leading-relaxed mb-6 max-w-3xl text-sm md:text-base">
               A full-stack web application that filters dining promos by credit card, enhancing user convenience. Achieved 85% data extraction coverage despite inconsistent website structures via adaptive Puppeteer scraping algorithms.
             </p>
             <ScreenshotGallery v-if="screenshots.feedme.length" :media="screenshots.feedme" class="mb-6" />
@@ -122,12 +121,12 @@
         <!-- Secondary Projects -->
         <div class="grid md:grid-cols-2 gap-6">
           <!-- Syllabuddy -->
-          <div class="p-8 bg-slate-800/30 border border-white/10 rounded-2xl flex flex-col">
+          <div class="p-6 md:p-8 bg-slate-800/30 border border-white/10 rounded-2xl flex flex-col overflow-hidden">
             <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center font-bold">S</div>
+              <div class="w-10 h-10 flex-shrink-0 bg-blue-600 rounded-xl flex items-center justify-center font-bold">S</div>
               <h3 class="text-xl font-bold">Syllabuddy</h3>
             </div>
-            <p class="text-gray-400 leading-relaxed mb-5">
+            <p class="text-gray-400 leading-relaxed mb-5 text-sm md:text-base">
               An AI-powered tool that parses course syllabi and automatically extracts important dates and deadlines — uploading them directly to Google Calendar. Designed for the less technical user: just upload a PDF.
             </p>
             <ScreenshotGallery v-if="screenshots.syllabuddy.length" :media="screenshots.syllabuddy" class="mb-5" />
@@ -143,12 +142,12 @@
           </div>
 
           <!-- DBSolutions -->
-          <div class="p-8 bg-slate-800/30 border border-white/10 rounded-2xl flex flex-col">
+          <div class="p-6 md:p-8 bg-slate-800/30 border border-white/10 rounded-2xl flex flex-col overflow-hidden">
             <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center font-bold">D</div>
+              <div class="w-10 h-10 flex-shrink-0 bg-emerald-600 rounded-xl flex items-center justify-center font-bold">D</div>
               <h3 class="text-xl font-bold">DBSolutions</h3>
             </div>
-            <p class="text-gray-400 leading-relaxed mb-5">
+            <p class="text-gray-400 leading-relaxed mb-5 text-sm md:text-base">
               A clean, functional database management system built and shipped in under a month. Features robust model logic with zero-error data handling and a polished, user-friendly frontend designed entirely from scratch.
             </p>
             <ScreenshotGallery v-if="screenshots.dbsolutions.length" :media="screenshots.dbsolutions" class="mb-5" />
@@ -174,57 +173,57 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 px-6 border-t border-white/5">
+    <section id="about" class="py-16 md:py-24 px-6 border-t border-white/5">
       <div class="max-w-6xl mx-auto">
         <p class="text-purple-400 font-medium text-sm tracking-wide uppercase mb-3">About</p>
-        <h2 class="text-3xl md:text-4xl font-bold mb-14">Background & Skills</h2>
-        <div class="grid md:grid-cols-2 gap-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-10 md:mb-14">Background & Skills</h2>
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16">
           <div>
-            <p class="text-gray-300 leading-relaxed mb-6">
+            <p class="text-gray-300 leading-relaxed mb-6 text-sm md:text-base">
               I'm a Computer Science (Honors) student at <span class="text-white font-medium">Ateneo de Manila University</span>, specializing in Data Science and Analytics (Cum Laude, 3.62 GPA). Currently serving as an <span class="text-white font-medium">Eskwelabs Innovation Fellow</span>, developing prompts and playbooks to make AI systems reliable and useful.
             </p>
-            <p class="text-gray-300 leading-relaxed mb-6">
+            <p class="text-gray-300 leading-relaxed mb-6 text-sm md:text-base">
               I've co-founded a sports apparel startup that achieved a 347% ROI, led fundraising teams, and shipped AI-powered applications to production.
             </p>
-            <p class="text-gray-400 leading-relaxed">
+            <p class="text-gray-400 leading-relaxed text-sm md:text-base">
               Whether you need a full-stack web application, an AI integration, a data pipeline, or a complete digital product — I deliver clean, scalable solutions from concept to deployment.
             </p>
           </div>
           <div class="space-y-8">
             <div>
               <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">Languages & Frameworks</h3>
-              <div class="flex flex-wrap gap-2.5">
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Python</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">JavaScript</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">SQL</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Vue.js</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">React</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Svelte</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Node.js</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Django</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Express</span>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Python</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">JavaScript</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">SQL</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Vue.js</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">React</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Svelte</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Node.js</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Django</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Express</span>
               </div>
             </div>
             <div>
               <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">AI & Data</h3>
-              <div class="flex flex-wrap gap-2.5">
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Machine Learning</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">LLM Prompting</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">RAG Systems</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">PyTorch</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Data Visualization</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Tableau</span>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Machine Learning</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">LLM Prompting</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">RAG Systems</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">PyTorch</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Data Visualization</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Tableau</span>
               </div>
             </div>
             <div>
               <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">Tools & Infrastructure</h3>
-              <div class="flex flex-wrap gap-2.5">
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">AWS</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">MongoDB</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">MySQL</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">ChromaDB</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Git</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">REST APIs</span>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">AWS</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">MongoDB</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">MySQL</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">ChromaDB</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">Git</span>
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300">REST APIs</span>
               </div>
             </div>
           </div>
@@ -233,16 +232,16 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6 border-t border-white/5">
+    <section id="contact" class="py-16 md:py-24 px-6 border-t border-white/5">
       <div class="max-w-3xl mx-auto text-center">
         <p class="text-purple-400 font-medium text-sm tracking-wide uppercase mb-3">Contact</p>
         <h2 class="text-3xl md:text-4xl font-bold mb-5">Let's Work Together</h2>
-        <p class="text-gray-400 mb-12 text-lg leading-relaxed">
+        <p class="text-gray-400 mb-10 md:mb-12 text-base md:text-lg leading-relaxed">
           Have a project in mind or looking for a developer? I'm currently available for freelance work, collaborations, and new opportunities.
         </p>
         <a href="mailto:justinbondc322@gmail.com"
-           class="inline-flex items-center gap-3 px-10 py-4 bg-purple-600 hover:bg-purple-700 rounded-xl font-medium text-lg transition-all hover:shadow-lg hover:shadow-purple-600/25">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           class="inline-flex items-center justify-center gap-3 px-6 md:px-10 py-4 bg-purple-600 hover:bg-purple-700 rounded-xl font-medium text-base md:text-lg transition-all hover:shadow-lg hover:shadow-purple-600/25 w-full sm:w-auto break-all sm:break-normal">
+          <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
           </svg>
           justinbondc322@gmail.com
@@ -260,7 +259,6 @@
       </div>
     </section>
 
-
     <!-- Lightbox -->
     <div v-if="lightbox" @click="lightbox = null"
          class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-zoom-out">
@@ -277,7 +275,7 @@
         :src="lightbox"
         class="max-w-full max-h-full rounded-xl shadow-2xl object-contain"
       />
-      <button @click.stop="lightbox = null" class="absolute top-6 right-6 text-white/60 hover:text-white">
+      <button @click.stop="lightbox = null" class="absolute top-4 right-4 text-white/60 hover:text-white">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
@@ -291,8 +289,6 @@ import ScreenshotGallery from './ScreenshotGallery.vue'
 const mobileOpen = ref(false)
 const lightbox = ref(null)
 
-// Add screenshot paths here when ready.
-// Drop files into homepage/public/screenshots/<project>/ and reference them as '/screenshots/<project>/filename.png'
 const screenshots = ref({
   talux: [
     '/screenshots/talux/demo.mov',
